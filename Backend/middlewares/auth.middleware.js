@@ -9,7 +9,6 @@ module.exports.authUser = async (req, res, next) => {
     const token = req.cookies.token || req.headers.authorization?.split(' ')[ 1 ];
 
     if (!token) {
-        console.log("msg1");
         return res.status(401).json({ message: 'Unauthorized' });
     }
 
@@ -17,7 +16,6 @@ module.exports.authUser = async (req, res, next) => {
     const isBlacklisted = await blackListTokenModel.findOne({ token: token });
 
     if (isBlacklisted) {
-        console.log("msg2");
         return res.status(401).json({ message: 'Unauthorized' });
     }
 
@@ -27,11 +25,10 @@ module.exports.authUser = async (req, res, next) => {
         const user = await userModel.findById(decoded._id)
 
         req.user = user;
-        console.log("msg3");
+
         return next();
 
     } catch (err) {
-        console.log("msg4");
         return res.status(401).json({ message: 'Unauthorized' });
     }
 }

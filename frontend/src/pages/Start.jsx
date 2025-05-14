@@ -1,33 +1,16 @@
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Start = () => {
   return (
-    <div
-      className='h-screen w-full bg-cover bg-center relative'
-      style={{
-        backgroundImage: "url('/taxi.jpg')",
-      }}
-    >
-      <div className='absolute inset-0 bg-black bg-opacity-40'></div>
-
-      <div className='relative z-10 flex flex-col justify-center items-center h-full text-white px-4'>
-        <img
-          className='w-32 absolute left-5 top-5'
-          src='https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png'
-          alt='Uber Logo'
-        />
-        <div className='text-center mt-20'>
-          <h1 className='text-4xl font-bold mb-4'>Welcome to Uber</h1>
-          <p className='text-lg'>Your ride, your way. Tap below to begin.</p>
+    <div>
+      <div className='bg-cover bg-center bg-[url(https://images.unsplash.com/photo-1619059558110-c45be64b73ae?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] h-screen pt-8 flex justify-between flex-col w-full'>
+        <img className='w-16 ml-8' src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoid2VhcmVcL2ZpbGVcLzhGbTh4cU5SZGZUVjUxYVh3bnEyLnN2ZyJ9:weare:F1cOF9Bps96cMy7r9Y2d7affBYsDeiDoIHfqZrbcxAw?width=1200&height=417" alt="" />
+        <div className='bg-white pb-8 py-4 px-4'>
+          <h2 className='text-[30px] font-semibold'>Get Started with Uber</h2>
+          <Link to='/login' className='flex items-center justify-center w-full bg-black text-white py-3 rounded-lg mt-5'>Continue</Link>
         </div>
-
-        <Link
-          to='/login'
-          className='mt-10 bg-white text-black px-6 py-3 rounded-full text-lg hover:bg-gray-200 transition duration-300'
-        >
-          Get Started
-        </Link>
       </div>
     </div>
   )
